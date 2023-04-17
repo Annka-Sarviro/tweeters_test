@@ -1,6 +1,7 @@
-import TweetCard from "../../components/TweetCard/TweetCard";
+import TweetCard from "../TweetCard/TweetCard";
+import Button from "../Button/Button";
 
-function TweetList({ tweets, onPageChange }) {
+function TweetList({ tweets, onPageChange, onFollowChange }) {
   if (!tweets) {
     return;
   }
@@ -14,10 +15,16 @@ function TweetList({ tweets, onPageChange }) {
     <>
       <ul className="mx-[auto] max-w-[1400px] ">
         {tweets.map((tweet) => {
-          return <TweetCard tweet={tweet} key={tweet.id} />;
+          return (
+            <TweetCard
+              tweet={tweet}
+              key={tweet.id}
+              onFollowChange={onFollowChange}
+            />
+          );
         })}
       </ul>
-      <button onClick={onButtonClick}>Load more</button>
+      <Button onClick={onButtonClick}>Load more</Button>
     </>
   );
 }

@@ -31,10 +31,14 @@ function HomePage() {
     setCurrentItems(tweets.slice(0, endOffset));
   }, [tweets, itemOffset]);
 
-  const handlePageClick = (event) => {
+  const handlePageClick = () => {
     console.log("click");
     const newOffset = itemOffset + itemsPerPage;
     setItemOffset(newOffset);
+  };
+
+  const handleFollowChange = () => {
+    console.log("twet click");
   };
 
   return (
@@ -43,6 +47,7 @@ function HomePage() {
       <TweetList
         onPageChange={handlePageClick}
         tweets={currentItems}
+        onFollowChange={handleFollowChange}
         // disabled={currentItems?.length >= tweets?.length ? true : false}
       />
     </div>

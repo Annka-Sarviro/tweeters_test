@@ -1,12 +1,11 @@
 import { NavLink } from "react-router-dom";
-// import getDays from "../../helpers/getDays";
-// import { MapPinIcon } from "@heroicons/react/24/solid";
-// import { BookmarkIcon } from "@heroicons/react/24/outline";
-// import { StarIcon } from "@heroicons/react/24/solid";
+import Button from "../Button/Button";
 
-function TweetCard({ tweet }) {
-  //   const location = useLocation();
-  //   const days = getDays(job.createdAt);
+function TweetCard({ tweet, onFollowChange }) {
+  function onButtonClick(e) {
+    e.preventDefault();
+    onFollowChange();
+  }
 
   return (
     <li className="" key={tweet.id}>
@@ -24,7 +23,7 @@ function TweetCard({ tweet }) {
         <div className="">
           <p className="">{tweet.tweets} tweets</p>
           <p className="">{tweet.followers} followers</p>
-          <button type="button">Follow</button>
+          <Button onClick={onButtonClick}>Follow</Button>
         </div>
       </NavLink>
     </li>
