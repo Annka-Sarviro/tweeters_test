@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Logo } from "../../components/TweetCard/TweetCard.styled";
 import { ButtonStyled } from "../../components/Button/Button.styled";
+import cardImg from "../../assets/card-img.png";
+
 export const Header = styled.header`
   display: flex;
   justify-content: space-between;
@@ -25,7 +27,7 @@ export const Title = styled.h1`
 `;
 
 export const Div = styled.div`
-  background-image: url("../../src/assets/card-img.png");
+  background-image: url(${cardImg});
   background-repeat: no-repeat;
   background-size: auto;
   height: 100vh;

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Button from "../Button/Button";
 import noImage from "../../assets/avatar.png";
+import logo from "../../assets/logo.png";
 
 import {
   Card,
@@ -33,7 +34,7 @@ function TweetCard({ tweet, onFollowChange }) {
   return (
     <>
       <Card>
-        <Logo src="../../src/assets/logo.png" alt="GoIt" />
+        <Logo src={logo} alt="GoIt" />
         <ImgContainer />
         <Line />
         <ImgThumb>

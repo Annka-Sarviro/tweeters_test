@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import cardImg from "../../assets/card-img.png";
 
 export const Card = styled.li`
   position: relative;
@@ -60,7 +61,7 @@ export const ImgContainer = styled.div`
   height: 168px;
   margin-left: 36px;
   margin-right: 36px;
-  background-image: url("../../src/assets/card-img.png");
+  background-image: url(${cardImg});
   background-size: contain;
   background-repeat: no-repeat;
 `;
