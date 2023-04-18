@@ -5,7 +5,6 @@ import "./App.css";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const TweetsPage = lazy(() => import("./pages/TweetPage/TweetPage"));
-const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 
 function App() {
   return (
@@ -15,7 +14,7 @@ function App() {
           <Route path="/tweeters_test/" element={<Layout />}>
             <Route index element={<HomePage />} />
             <Route path="/tweeters_test/tweets/" element={<TweetsPage />} />
-            <Route path="*" element={<NotFoundPage />} />
+            <Route path="*" element={<HomePage />} />
           </Route>
         </Routes>
       </Suspense>
