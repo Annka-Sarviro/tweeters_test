@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import cardImg from "../../assets/card-img.png";
+import { ButtonStyled } from "../Button/Button.styled";
 
 export const Card = styled.li`
   position: relative;
@@ -69,4 +70,8 @@ export const ImgContainer = styled.div`
 export const Text = styled.p`
   margin: 0 auto 12px auto;
   text-align: center;
+`;
+
+export const ButtonFollow = styled(ButtonStyled)`
+  background-color: var(--accent-color);
 `;

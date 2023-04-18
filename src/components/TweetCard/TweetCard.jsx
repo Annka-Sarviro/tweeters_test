@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import Button from "../Button/Button";
+import { ButtonFollow } from "../TweetCard/TweetCard.styled";
 import noImage from "../../assets/avatar.png";
 import logo from "../../assets/logo.png";
+import formattedNumber from "../../services/formatNumber";
 
 import {
   Card,
@@ -45,10 +47,10 @@ function TweetCard({ tweet, onFollowChange }) {
           )}
         </ImgThumb>
         <Text>{tweet.tweets} tweets</Text>
-        <Text>{follower} followers</Text>
+        <Text>{formattedNumber(follower)} followers</Text>
 
         {checked ? (
-          <Button onClick={onButtonClick}>Following</Button>
+          <ButtonFollow onClick={onButtonClick}>Following</ButtonFollow>
         ) : (
           <Button onClick={onButtonClick}>Follow</Button>
         )}
