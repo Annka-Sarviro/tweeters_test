@@ -25,6 +25,7 @@ function TweetList({ tweets, onPageChange, onFollowChange }) {
           );
         })}
       </List>
+
       <Button onClick={onButtonClick}>Load more</Button>
     </>
   );

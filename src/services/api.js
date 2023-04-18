@@ -8,7 +8,6 @@ export const getTweetersList = async () => {
 };
 
 export const setFollowingTweeter = async (id, followers, check) => {
-  console.log(followers, check);
   const response = await axios.put(`/${id}`, {
     followers: followers,
     checked: check,

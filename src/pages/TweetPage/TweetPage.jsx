@@ -7,7 +7,6 @@ import Button from "../../components/Button/Button";
 function TweetPage() {
   const [tweets, setTweets] = useState([]);
   const [currentItems, setCurrentItems] = useState(null);
-
   const [itemOffset, setItemOffset] = useState(0);
   const itemsPerPage = 9;
 
@@ -38,12 +37,14 @@ function TweetPage() {
     setItemOffset(newOffset);
   };
 
-  const handleFollowChange = (id) => {
-    const clickTweet = tweets.filter((tweet) => tweet.id === id)[0];
+  const handleFollowChange = async (id) => {
+    const data = await getTweetersList();
+    const clickTweet = data.filter((tweet) => tweet.id === id)[0];
     const checkTweet = clickTweet.checked;
+
     setFollowingTweeter(
       id,
-      checkTweet ? +clickTweet.followers + 1 : +clickTweet.followers - 1,
+      checkTweet ? +clickTweet.followers - 1 : +clickTweet.followers + 1,
       !checkTweet ? true : false
     );
   };
@@ -57,6 +58,7 @@ function TweetPage() {
         onPageChange={handlePageClick}
         tweets={currentItems}
         onFollowChange={handleFollowChange}
+
         // disabled={currentItems?.length >= tweets?.length ? true : false}
       />
     </div>
