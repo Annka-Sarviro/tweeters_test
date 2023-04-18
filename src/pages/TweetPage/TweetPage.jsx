@@ -8,6 +8,7 @@ function TweetPage() {
   const [tweets, setTweets] = useState([]);
   const [currentItems, setCurrentItems] = useState(null);
   const [itemOffset, setItemOffset] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
   const itemsPerPage = 9;
 
   useEffect(() => {
@@ -15,6 +16,7 @@ function TweetPage() {
       try {
         const data = await getTweetersList();
         setTweets(data);
+        setIsLoading(true);
       } catch (error) {
         console.log({ error });
       }
@@ -50,18 +52,22 @@ function TweetPage() {
   };
 
   return (
-    <div className="">
-      <NavLink to={`/tweeters_test/`}>
-        <Button>Go Home</Button>
-      </NavLink>
-      <TweetList
-        onPageChange={handlePageClick}
-        tweets={currentItems}
-        onFollowChange={handleFollowChange}
-
-        // disabled={currentItems?.length >= tweets?.length ? true : false}
-      />
-    </div>
+    <>
+      {!isLoading ? (
+        <div>is load</div>
+      ) : (
+        <>
+          <NavLink to={`/tweeters_test/`}>
+            <Button>Go Home</Button>
+          </NavLink>
+          <TweetList
+            onPageChange={handlePageClick}
+            tweets={currentItems}
+            onFollowChange={handleFollowChange}
+          />
+        </>
+      )}
+    </>
   );
 }
 

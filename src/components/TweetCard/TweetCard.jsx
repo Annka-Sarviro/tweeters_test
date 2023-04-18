@@ -47,13 +47,9 @@ function TweetCard({ tweet, onFollowChange }) {
         <Text>{follower} followers</Text>
 
         {checked ? (
-          <Button onClick={onButtonClick} checked={tweet.checked}>
-            Following
-          </Button>
+          <Button onClick={onButtonClick}>Following</Button>
         ) : (
-          <Button onClick={onButtonClick} checked={tweet.checked}>
-            Follow
-          </Button>
+          <Button onClick={onButtonClick}>Follow</Button>
         )}
       </Card>
     </>
