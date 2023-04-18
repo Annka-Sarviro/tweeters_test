@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 import { ButtonFollow } from "../TweetCard/TweetCard.styled";
 import noImage from "../../assets/avatar.png";
 import logo from "../../assets/logo.png";
-import formattedNumber from "../../services/formatNumber";
+import formattedNumber from "../../helpers/formatNumber";
 
 import {
   Card,
