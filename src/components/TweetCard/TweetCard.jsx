@@ -1,32 +1,40 @@
-import { NavLink } from "react-router-dom";
 import Button from "../Button/Button";
+import noImage from "../../assets/avatar.png";
+import {
+  Card,
+  Logo,
+  ImgContainer,
+  ImgThumb,
+  Avatar,
+  Line,
+  Text,
+} from "./TweetCard.styled";
 
 function TweetCard({ tweet, onFollowChange }) {
   function onButtonClick(e) {
-    e.preventDefault();
-    onFollowChange();
+    onFollowChange(tweet.id);
   }
 
   return (
-    <li className="" key={tweet.id}>
-      <NavLink
-        className="flex justify-between cursor-pointer"
-        to={`/tweets/${tweet.id}`}
-      >
-        <img
-          className=" "
-          src={tweet.avatar}
-          alt={tweet.name}
-          width={85}
-          height={85}
-        />
-        <div className="">
-          <p className="">{tweet.tweets} tweets</p>
-          <p className="">{tweet.followers} followers</p>
-          <Button onClick={onButtonClick}>Follow</Button>
-        </div>
-      </NavLink>
-    </li>
+    <>
+      <Card>
+        <Logo src="../../src/assets/logo.png" alt="GoIt" />
+        <ImgContainer />
+        <Line />
+        <ImgThumb>
+          {tweet.avatar ? (
+            <Avatar src={`${tweet.avatar}`} alt={tweet.name} />
+          ) : (
+            <Avatar src={noImage} alt={tweet.name} />
+          )}
+        </ImgThumb>
+        <Text>{tweet.tweets} tweets</Text>
+        <Text>{tweet.followers} followers</Text>
+        <Button onClick={onButtonClick} checked={tweet.checked}>
+          Follow
+        </Button>
+      </Card>
+    </>
   );
 }
 

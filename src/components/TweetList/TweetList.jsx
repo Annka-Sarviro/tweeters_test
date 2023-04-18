@@ -1,5 +1,6 @@
 import TweetCard from "../TweetCard/TweetCard";
 import Button from "../Button/Button";
+import { List } from "./TweetList.styled";
 
 function TweetList({ tweets, onPageChange, onFollowChange }) {
   if (!tweets) {
@@ -13,7 +14,7 @@ function TweetList({ tweets, onPageChange, onFollowChange }) {
 
   return (
     <>
-      <ul className="mx-[auto] max-w-[1400px] ">
+      <List>
         {tweets.map((tweet) => {
           return (
             <TweetCard
@@ -23,7 +24,7 @@ function TweetList({ tweets, onPageChange, onFollowChange }) {
             />
           );
         })}
-      </ul>
+      </List>
       <Button onClick={onButtonClick}>Load more</Button>
     </>
   );

@@ -1,13 +1,10 @@
+import { ButtonStyled } from "./Button.styled";
+
 const Button = (props) => {
   return (
-    <button
-      className={`btn ${props.className}`}
-      type="button"
-      onClick={props.onClick}
-    >
-      {" "}
+    <ButtonStyled type="button" onClick={props.onClick} check={props.checked}>
       {props.children}
-    </button>
+    </ButtonStyled>
   );
 };
 

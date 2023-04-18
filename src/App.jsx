@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/tweeters_test/" element={<Layout />}>
             <Route index element={<HomePage />} />
-            <Route path="/tweeters_test/tweets/:id" element={<TweetsPage />} />
+            <Route path="/tweeters_test/tweets/" element={<TweetsPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>

@@ -7,7 +7,11 @@ export const getTweetersList = async () => {
   return response.data;
 };
 
-export const getTweetersListById = async (id) => {
-  const response = await axios.get(`/${id}`);
-  return response.data;
+export const setFollowingTweeter = async (id, followers, check) => {
+  console.log(followers, check);
+  const response = await axios.put(`/${id}`, {
+    followers: followers,
+    checked: check,
+  });
+  return response;
 };

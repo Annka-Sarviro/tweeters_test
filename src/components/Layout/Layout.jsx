@@ -1,9 +1,14 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
+import { GlobalStyle } from "./GlobalStyle";
+import { Container } from "./Layout.styled";
 
 export const Layout = () => {
   return (
-    <div className="">
-      <Outlet />
-    </div>
+    <>
+      <GlobalStyle />
+      <Container>
+        <Outlet />
+      </Container>
+    </>
   );
 };
