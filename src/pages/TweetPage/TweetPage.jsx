@@ -68,7 +68,7 @@ function TweetPage() {
         <div>is load</div>
       ) : (
         <>
-          <NavLink to={`/tweeters_test/`}>
+          <NavLink to={`/`}>
             <Button>Go Home</Button>
           </NavLink>
           <Filter onFilterChange={handleOptionChange} />
