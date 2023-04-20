@@ -21,7 +21,7 @@ function HomePage() {
       <Div>
         <TitleBox>
           <Title>Hello User</Title>
-          <NavLink to={`/tweeters_test/tweets`}>
+          <NavLink to={`/tweets`}>
             <Button>Go to tweets</Button>
           </NavLink>
         </TitleBox>

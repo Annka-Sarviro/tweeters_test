@@ -1,21 +1,21 @@
-[dev]
-  command = "npm run vite:start"
-  publish = "dist"
-  # We need another port for the application because Vite occupies the 3000.
-  port = 8080
-
+# example netlify.toml
 [build]
-  command = "npm run vite:build"
+  command = "vite build"
+  functions = "netlify/functions"
   publish = "dist"
 
-#[functions]
-  # We are goint to use ES modules so we need esbuild to transpile the code.
-  node_bundler = "esbuild"
-  # This line will include into the environment a file with the mock data.
-  included_files = ["data/*.json"]
+  ## Uncomment to use this redirect for Single Page Applications like create-react-app.
+  ## Not needed for static site generators.
+  [[redirects]]
+   from = "/tweeters_test/tweets*"
+   to = "index.html"
+   status = 200
 
-# We have to tell the Netlify that this URL will be served by the books.js function.
-[redirects]
-  from = "/*"
-  to = "/.netlify/tweeters_test/tweets"
-  status = 200
+  ## (optional) Settings for Netlify Dev
+  ## https://github.com/netlify/cli/blob/main/docs/netlify-dev.md#project-detection
+  #[dev]
+  #  command = "yarn start" # Command to start your dev server
+  #  port = 3000 # Port that the dev server will be listening on
+  #  publish = "dist" # Folder with the static content for _redirect file
+
+  ## more info on configuring this file: https://docs.netlify.com/configure-builds/file-based-configuration/
