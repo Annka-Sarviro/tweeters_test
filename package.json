@@ -6,7 +6,7 @@
   "homepage": "https://Annka-Sarviro.github.io/tweeters_test",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build  ",
     "preview": "vite preview"
   },
   "dependencies": {
