@@ -1,7 +1,7 @@
 # Tweeters
 ![tweeters](https://imageup.ru/img99/4299054/card-img.jpg)
 ## _The tweeters shower_
-[Click to view](https://annka-sarviro.github.io/tweeters_test/)
+[Click to view](https://annkatweters.netlify.app/)
 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Annka-Sarviro/tweeters_test)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Annka-Sarviro/tweeters_test/static.yml)
